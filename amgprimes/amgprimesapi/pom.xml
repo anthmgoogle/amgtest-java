@@ -16,11 +16,6 @@
     <name>AMG Primes API Server Name</name>
     <description>AMG Primes API Server Description</description>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>22</maven.compiler.release>
-  </properties>
-
   <dependencies>
     <dependency>
         <groupId>com.amgtest.amgprimes</groupId>
@@ -29,28 +24,6 @@
         <scope>compile</scope>
     </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.4.5</version>
-        </dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-      <version>3.4.5</version>
-			<scope>test</scope>
-		</dependency>
-
   </dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>
