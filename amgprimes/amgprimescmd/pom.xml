@@ -45,6 +45,12 @@
                     <exclude>META-INF/maven/**/pom.properties</exclude>
                   </excludes>
                 </filter>
+                <filter>
+                  <artifact>com.amgtest.amgprimes:amgprimescmd</artifact>
+                  <excludes>
+                    <exclude>com/amgtest/amgprimes/amgprimeslib/Primes.class</exclude>
+                  </excludes>
+                </filter>
               </filters>
               <transformers>
                 <transformer
