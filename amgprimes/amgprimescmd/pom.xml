@@ -41,6 +41,8 @@
                   <artifact>*:*</artifact>
                   <excludes>
                     <exclude>META-INF/MANIFEST.MF</exclude>
+                    <exclude>META-INF/maven/**/pom.xml</exclude>
+                    <exclude>META-INF/maven/**/pom.properties</exclude>
                   </excludes>
                 </filter>
               </filters>
