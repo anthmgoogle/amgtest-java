@@ -72,6 +72,11 @@
             <release>${maven.compiler.release}</release>
             <!-- Required by Spring and a better default -->
             <parameters>true</parameters>
+            <!-- Warnings as errors -->
+            <compilerArgs>
+              <arg>-Xlint:all</arg>
+              <arg>-Werror</arg>
+            </compilerArgs>
           </configuration>
         </plugin>
         <plugin>
