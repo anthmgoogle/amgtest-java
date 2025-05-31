@@ -6,16 +6,9 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'us-west1-docker.pkg.dev/$PROJECT_ID/amgprimes-local/amgprimesapi:latest', '.']
 
-# Step 3: Push the Docker image to Artifact Registry
-# The 'images' field automatically pushes the tagged image.
 images:
 - 'us-west1-docker.pkg.dev/$PROJECT_ID/amgprimes-local/amgprimesapi:latest' # Must match the tag from Step 2
 
-# Optional: Substitutions for dynamic values (like version or other build-time variables)
-# You would pass these when you submit the build:
-# gcloud builds submit --config cloudbuild.yaml --substitutions=_BUILD_VERSION=1.0.0
-# substitutions:
-#   _BUILD_VERSION: '1.0.0' # Default value, can be overridden by gcloud command
 
 # Optional: Deploy to Cloud Run after a successful build and push
 # - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
