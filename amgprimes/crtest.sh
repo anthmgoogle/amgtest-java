@@ -3,7 +3,7 @@
 test_get() {
   echo
   echo "GET $1"
-  GET_CMD="curl https://amgprimesapi-452448898061.europe-west1.run.app$1"
+  GET_CMD="curl https://amgprimesapi-452448898061.us-west1.run.app$1"
   echo $GET_CMD
   $GET_CMD
   echo
