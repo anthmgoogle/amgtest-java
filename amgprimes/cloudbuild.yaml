@@ -15,17 +15,16 @@ steps:
     - '-c'
     - 'cd amgprimes && docker build -t us-west1-docker.pkg.dev/$PROJECT_ID/amgprimes-local/amgprimesapi:latest .'
 
+# Optional: Deploy to Cloud Run after a successful build and push
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'gcloud'
+  args: [
+    'run', 'deploy', 'amprimesapi', 
+    '--image', 'us-west1-docker.pkg.dev/$PROJECT_ID/amgprimes-local/amgprimesapi:latest',
+    '--region', 'us-west1'
+  ]
+
 images:
 - 'us-west1-docker.pkg.dev/$PROJECT_ID/amgprimes-local/amgprimesapi:latest' # Must match the tag from Step 2
 
 
-# Optional: Deploy to Cloud Run after a successful build and push
-# - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#   entrypoint: 'gcloud'
-#   args: [
-#     'run', 'deploy', 'amgprimes-api-service',
-#     '--image', 'us-west1-docker.pkg.dev/$PROJECT_ID/amgprimes-local/amgprimesapi:latest',
-#     '--region', 'us-west1', # Replace with your Cloud Run service region
-#     '--platform', 'managed',
-#     '--allow-unauthenticated' # Or --no-allow-unauthenticated based on your setup
-#   ]
