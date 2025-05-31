@@ -21,7 +21,8 @@ steps:
   args: [
     'run', 'deploy', 'amprimesapi', 
     '--image', 'us-west1-docker.pkg.dev/$PROJECT_ID/amgprimes-local/amgprimesapi:latest',
-    '--region', 'us-west1'
+    '--region', 'us-west1',
+    '--allow-unauthenticated'
   ]
 
 images:
