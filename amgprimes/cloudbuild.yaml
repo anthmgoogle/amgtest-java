@@ -19,7 +19,7 @@ steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'gcloud'
   args: [
-    'run', 'deploy', 'amprimesapi', 
+    'run', 'deploy', 'amgprimesapi', 
     '--image', 'us-west1-docker.pkg.dev/$PROJECT_ID/amgprimes-local/amgprimesapi:latest',
     '--region', 'us-west1',
     '--allow-unauthenticated'
