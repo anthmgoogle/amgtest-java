@@ -1,4 +1,8 @@
 steps:
+- name: 'ubuntu'
+  entrypoint: 'bash'
+  args: ['-c', 'cd amgprimes && pwd']
+
 - name: 'maven:3-jdk-21' # Or another suitable Maven/JDK image
   entrypoint: 'mvn'
   args: ['clean', 'package']
