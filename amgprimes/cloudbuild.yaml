@@ -6,7 +6,7 @@ steps:
   entrypoint: 'bash'
   args: ['-c', 'cd amgprimes && pwd']
 
-- name: 'maven:3-jdk-21' # Or another suitable Maven/JDK image
+- name: 'maven:3.9.6-eclipse-temurin-21'
   entrypoint: 'mvn'
   args: ['clean', 'package']
 
