@@ -2,16 +2,30 @@ options:
   logging: CLOUD_LOGGING_ONLY
 
 steps:
-- name: 'ubuntu'
-  entrypoint: 'bash'
-  args: ['-c', 'cd amgprimes && pwd']
 
 - name: 'maven:3.9.6-eclipse-temurin-21'
-  entrypoint: 'mvn'
-  args: ['clean', 'package']
+  entrypoint: 'bash'
+  args:
+    - '-c' # Tells bash to interpret the next argument as a command string
+    - 'cd amgprimes && mvn clean package -DskipTests' # Change directory AND run Maven
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-west1-docker.pkg.dev/$PROJECT_ID/amgprimes-local/amgprimesapi:latest', '.']
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - 'cd amgprimes && docker build -t us-west1-docker.pkg.dev/$PROJECT_ID/amgprimes-local/amgprimesapi:latest .'
+
+#steps:
+#- name: 'ubuntu'
+#  entrypoint: 'bash'
+#  args: ['-c', 'cd amgprimes && pwd']
+
+#- name: 'maven:3.9.6-eclipse-temurin-21'
+#  entrypoint: 'mvn'
+#  args: ['clean', 'package']
+
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: ['build', '-t', 'us-west1-docker.pkg.dev/$PROJECT_ID/amgprimes-local/amgprimesapi:latest', '.']
 
 images:
 - 'us-west1-docker.pkg.dev/$PROJECT_ID/amgprimes-local/amgprimesapi:latest' # Must match the tag from Step 2
