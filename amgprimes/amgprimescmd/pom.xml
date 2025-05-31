@@ -13,14 +13,14 @@
   <groupId>com.amgtest.amgprimes</groupId>
   <artifactId>amgprimescmd</artifactId>
   <packaging>jar</packaging>
-  <name>AMG Primes Library Name</name>
+  <name>AMG Primes Command Name</name>
   <description>AMG Primes Librar Description</description>
 
   <dependencies>
     <dependency>
       <groupId>com.amgtest.amgprimes</groupId>
       <artifactId>amgprimeslib</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <version>1.0.01</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
